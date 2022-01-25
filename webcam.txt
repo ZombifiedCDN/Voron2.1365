@@ -1,0 +1,40 @@
+
+### Configure which camera to use
+#
+# Available options are:
+# - auto: tries first usb webcam, if that's not available tries raspi cam
+# - usb: only tries usb webcam
+# - raspi: only tries raspi cam
+#
+# Defaults to auto
+#
+camera="raspi"
+
+### Additional options to supply to MJPG Streamer for the RasPi Cam
+#
+# See https://faq.octoprint.org/mjpg-streamer-config for available options
+#
+# Defaults to 10fps
+#
+camera_raspi_options="-x 1280 -y 960 -fps 10 "
+
+### Configuration of camera HTTP output
+#
+# Usually you should NOT need to change this at all! Only touch if you
+# know what you are doing and what the parameters mean.
+#
+# Below settings are used in the mjpg-streamer call like this:
+#
+#   -o "output_http.so -w $camera_http_webroot $camera_http_options"
+#
+# Current working directory is the mjpg-streamer base directory.
+#
+camera_http_webroot="./www-fluiddpi"
+camera_http_options="-p 8080"
+
+### EXPERIMENTAL
+# Support for different streamer types.
+#
+# Available options:
+#   mjpeg [default] - stable MJPG-streamer
+#camera_streamer=mjpeg
