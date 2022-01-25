@@ -26,3 +26,4 @@
 
   MGN 12 X Rail
 
+  Nozzle Brush
